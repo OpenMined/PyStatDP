@@ -6,3 +6,4 @@ pre-commit
 scipy
 sympy
 tqdm
+statsmodels==0.12.2
