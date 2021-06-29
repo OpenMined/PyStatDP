@@ -95,7 +95,7 @@ def run_algorithm(algorithm, d1, d2, kwargs, event, total_iterations):
                     unique = np.unique(combined_result)
 
                     # categorical output
-                    if len(unique) < iterations * 0.002:
+                    if len(unique) < iterations * 0.1:
                         event_search_space.append(
                             tuple(int(key) for key in unique))
                     else:

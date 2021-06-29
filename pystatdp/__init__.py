@@ -138,8 +138,10 @@ class pystatdp:
                                                      process_pool=pool)
                 p = hypothesis_test(algorithm, d1, d2, kwargs, event, epsilon, detect_iterations, report_p2=False,
                                     process_pool=pool)
-                result.append((epsilon, float(p), d1.tolist(),
-                               d2.tolist(), kwargs, event))
+                if type(d1) != list:
+                    d1 = d1.tolist()
+                    d2 = d2.tolist()
+                result.append((epsilon, float(p), d1, d2, kwargs, event))
                 if not quiet:
                     tqdm.write(
                         f'Epsilon: {epsilon} | p-value: {p:5.3f} | Event: {event}')
